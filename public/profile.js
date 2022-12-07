@@ -18,8 +18,9 @@ const zipCodeInput = document.querySelector('#zip-code')
 // })
 
 function getProfileInfo() {
-    axios.get('http://localhost:9876/user') 
+    axios.get('http://localhost:4004/user') 
         .then(res => {
+            
             const user = res.data[0]
 
             const {
@@ -56,7 +57,7 @@ function updateInfo() {
         zipCode: zipCodeInput.value
     }
 
-    axios.put('http://localhost:9876/user', body)
+    axios.put('http://localhost:4004/user', body)
         .then(res => console.log(1, res))
         .catch(err => console.log(err))
 }
